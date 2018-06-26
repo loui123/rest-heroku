@@ -50,7 +50,7 @@ public class HomeController {
                              @ModelAttribute("insertRecord") @Valid Record record,
                              BindingResult result) {
         if (!result.hasErrors()) {
-            repository.save(record);
+            repository.saveAndFlush(record);
         }
         return home(model);
     }
